@@ -17,7 +17,7 @@ export const onHoverBoxAnimation = (
         }
       })
       .to(gridBoxRef.current, {
-        background: DefaultTheme.colors.text.heading
+        background: DefaultTheme.colors.primary.dark
       })
       .to(
         splitElementRef.current!.children,

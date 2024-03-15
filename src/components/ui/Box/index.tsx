@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 
 import { Flex } from '@/components';
 
@@ -34,13 +35,13 @@ const Box = ({
     }
   };
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     ctx.current = onHoverBoxAnimation(gridBoxRef, splitElementRef);
 
     return () => {
       ctx.current && ctx.current.revert();
     };
-  }, []);
+  });
 
   return (
     <S.BoxContent
