@@ -1,11 +1,8 @@
 import { RefObject } from 'react';
 import gsap from 'gsap';
 
-import { DefaultTheme } from '@/styles';
-
-export const onHoverBoxAnimation = (
-  gridBoxRef: RefObject<HTMLDivElement>,
-  splitElementRef: RefObject<HTMLDivElement>
+export const splitElementAnimation = (
+  splitElementRef: RefObject<HTMLSpanElement>
 ) => {
   return gsap.context((self) => {
     const tl = gsap
@@ -15,9 +12,6 @@ export const onHoverBoxAnimation = (
           ease: 'power1.inOut',
           duration: 0.4
         }
-      })
-      .to(gridBoxRef.current, {
-        background: DefaultTheme.colors.black.main
       })
       .to(
         splitElementRef.current!.children,
