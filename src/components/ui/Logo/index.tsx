@@ -2,7 +2,7 @@ import * as S from './styles';
 
 import { LogoProps } from './types';
 
-const Logo = ({ color = 'primary', size = 'sm' }: LogoProps) => {
+const Logo = ({ color = 'primary', size = 'md' }: LogoProps) => {
   return (
     <S.LogoContent color={color} size={size}>
       <svg

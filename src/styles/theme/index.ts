@@ -33,15 +33,14 @@ const defaultTheme = {
   colors: {
     white: '#FFF',
     black: {
-      main: '#040506'
+      main: '#151618'
     },
     text: {
-      heading: '#23292e',
+      heading: '#151618',
       main: '#606060'
     },
     primary: {
-      main: '#524BF2',
-      dark: '#040506'
+      main: '#524BF2'
     },
     purple: {
       main: '#3A3051',
@@ -53,7 +52,8 @@ const defaultTheme = {
       50: '#F5F5F5',
       100: '#F2F2F2',
       200: '#C7CFD9',
-      700: '#383838'
+      700: '#383838',
+      800: '#2C2E32'
     },
     green: {
       main: '#43F0C7'

@@ -1,3 +1,9 @@
+export { default as Avatar } from './ui/Avatar';
 export { default as Box } from './ui/Box';
 export { default as Cursor } from './ui/Cursor';
 export { FlexComponent as Flex } from './ui/Flex';
+export { default as Logo } from './ui/Logo';
+export { default as Magnetic } from './ui/Magnetic';
+export { default as Split } from './ui/Split';
+export { default as Status } from './ui/Status';
+export { default as Text } from './ui/Text';
