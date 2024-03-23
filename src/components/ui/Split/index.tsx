@@ -1,4 +1,5 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
 
 import * as S from './styles';
 
@@ -30,13 +31,13 @@ const Split = ({
     }
   };
 
-  useLayoutEffect(() => {
+  useGSAP(() => {
     ctx.current = splitElementAnimation(splitElementRef);
 
     return () => {
       ctx.current && ctx.current.revert();
     };
-  }, []);
+  });
 
   return (
     <S.SplitContent
