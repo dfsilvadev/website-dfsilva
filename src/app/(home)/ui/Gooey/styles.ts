@@ -22,7 +22,7 @@ export const GooeyContent = styled.div`
     .item {
       width: 100px;
       height: 100px;
-      background-color: ${theme.colors.primary.dark};
+      background-color: ${theme.colors.black.main};
     }
 
     .item.mt-95 {
