@@ -16,8 +16,8 @@ const Box = ({
   horizontalAlign = 'space-between',
   area,
   padding = '3.2rem',
-  borderbat = 'tpb',
-  borderlar = 'lfr'
+  borderbat = 'none',
+  borderlar = 'none'
 }: IBoxProps) => {
   const splitElementRef = useRef<HTMLDivElement>(null);
   const gridBoxRef = useRef<HTMLDivElement>(null);
@@ -36,7 +36,7 @@ const Box = ({
   };
 
   useGSAP(() => {
-    ctx.current = onHoverBoxAnimation(gridBoxRef, splitElementRef);
+    ctx.current = onHoverBoxAnimation(gridBoxRef, splitElementRef, 'primary');
 
     return () => {
       ctx.current && ctx.current.revert();

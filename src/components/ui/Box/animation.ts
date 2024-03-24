@@ -5,7 +5,8 @@ import { DefaultTheme } from '@/styles';
 
 export const onHoverBoxAnimation = (
   gridBoxRef: RefObject<HTMLDivElement>,
-  splitElementRef: RefObject<HTMLDivElement>
+  splitElementRef: RefObject<HTMLDivElement>,
+  color: 'primary' | 'black'
 ) => {
   return gsap.context((self) => {
     const tl = gsap
@@ -17,7 +18,7 @@ export const onHoverBoxAnimation = (
         }
       })
       .to(gridBoxRef.current, {
-        background: DefaultTheme.colors.black.main
+        background: DefaultTheme.colors[color].main
       })
       .to(
         splitElementRef.current!.children,
