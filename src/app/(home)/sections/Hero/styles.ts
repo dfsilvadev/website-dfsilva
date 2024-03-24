@@ -38,7 +38,7 @@ export const HeroInfo = styled.div`
     position: relative;
 
     font-size: min(18vw, 16.6rem);
-    line-height: 90%;
+    line-height: 80%;
     font-weight: ${theme.font.weight.medium};
     color: ${theme.colors.text.heading};
     font-size-adjust: 0.54;
@@ -49,6 +49,10 @@ export const HeroInfo = styled.div`
 
     .letter:hover {
       color: ${theme.colors.primary.main} !important;
+    }
+
+    @media (min-width: 992px) {
+      font-size: min(16vw, 9vw);
     }
   `}
 `;
