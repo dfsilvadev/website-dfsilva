@@ -39,7 +39,7 @@ export const HeroInfo = styled.div`
 
     font-size: min(18vw, 16.6rem);
     line-height: 80%;
-    font-weight: 700;
+    font-weight: ${theme.font.weight.medium};
     color: ${theme.colors.text.heading};
     font-size-adjust: 0.54;
 
