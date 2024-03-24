@@ -1,28 +1,34 @@
 'use client';
 
-import { FlexComponent } from '@/components/ui/Flex';
 import styled, { css } from 'styled-components';
+
+import { FlexComponent } from '@/components/ui/Flex';
 
 export const HeroContent = styled.section`
   ${({ theme }) => css`
     width: 100vw;
     height: 100vh;
     background: ${theme.colors.gray[800]};
-    padding: 6rem 1.5rem;
     overflow: hidden;
 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1.5fr 1fr;
 
     @media (min-width: 992px) {
-      padding: 6rem;
+      height: 90vh;
+
+      grid-template-columns: 1.5fr 1fr;
+      grid-template-rows: auto;
     }
   `}
 `;
 
-export const HeroOccupation = styled(FlexComponent)`
-  height: 100%;
+export const LeftColumn = styled(FlexComponent)`
+  padding: 3.2rem 1.5rem;
+
+  @media (min-width: 992px) {
+    padding: 3.2rem 6rem;
+  }
 `;
 
 export const HeroInfo = styled.div`
@@ -41,19 +47,27 @@ export const HeroInfo = styled.div`
       position: absolute;
     }
 
-    .gradient {
-      background: ${theme.colors.gradient.base};
-      background: ${theme.colors.gradient.linear};
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .letter:hover {
+      color: ${theme.colors.primary.main} !important;
     }
   `}
 `;
 
-export const HeroFooter = styled(FlexComponent)`
-  @media (max-width: 512px) {
-    .display-none {
-      display: none;
-    }
+export const RightColumn = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-areas:
+    'react react react react'
+    'next next next next'
+    'node node node node';
+
+  @media (min-width: 992px) {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas:
+      'react react next next'
+      'react react next next'
+      'react react node node'
+      'react react node node';
   }
 `;

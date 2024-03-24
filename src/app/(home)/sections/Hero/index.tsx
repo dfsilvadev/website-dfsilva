@@ -1,54 +1,46 @@
-import { Flex, Logo, Magnetic, Split, Text } from '@/components';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useGSAP } from '@gsap/react';
 
-import { SHAPES } from './mock';
+import { Box, Flex, Logo, Magnetic, Split, Text } from '@/components';
 
 import { SOCIAL_URL } from '@/utils/common/constant';
 
 import * as S from './styles';
 
 const Hero = () => {
+  useGSAP(() => {});
+
   return (
     <S.HeroContent>
-      <S.HeroOccupation align="center" justify="center">
+      <S.LeftColumn align="flex-end" gap="3rem">
         <S.HeroInfo>
           <Flex>
             {'Sênior'.split('').map((letter, i) => (
               <Magnetic key={i}>
-                <span>{letter}</span>
+                <span className="letter">{letter}</span>
               </Magnetic>
             ))}
           </Flex>
-          <Flex justify="flex-end">
+
+          <Flex>
             {'Frontend'.split('').map((letter, i) => (
               <Magnetic key={i}>
-                <span>{letter}</span>
+                <span className="letter">{letter}</span>
               </Magnetic>
             ))}
           </Flex>
+
           <Flex>
             {'Developer'.split('').map((letter, i) => (
               <Magnetic key={i}>
-                <span>{letter}</span>
+                <span className="letter">{letter}</span>
               </Magnetic>
             ))}
           </Flex>
-
-          {SHAPES.map((item, i) => (
-            <Image
-              src={item.src}
-              alt={item.alt}
-              width={item.width}
-              height={item.height}
-              style={item.style}
-              key={i}
-            />
-          ))}
         </S.HeroInfo>
-      </S.HeroOccupation>
 
-      <S.HeroFooter align="center" justify="space-between">
         <Flex align="center" gap="6rem">
           <Flex align="center" gap="1.6rem">
             <Logo color="black" />
@@ -62,77 +54,107 @@ const Hero = () => {
             </Flex>
           </Flex>
 
-          <Flex align="center" gap="2rem">
-            <Split splitChildren="React" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                React
-              </Text>
-            </Split>
+          <Flex align="center" gap="2.8rem" className="display-none">
+            <Link
+              href={SOCIAL_URL.INSTAGRAM}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Split splitChildren="ig" fontSize="1.4rem" weight={500}>
+                <Text color="gray200" weight={500} size="1.4rem">
+                  ig
+                </Text>
+              </Split>
+            </Link>
 
-            <Split splitChildren="Next" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                Next
-              </Text>
-            </Split>
+            <Link
+              href={SOCIAL_URL.LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Split splitChildren="lk" fontSize="1.4rem" weight={500}>
+                <Text color="gray200" weight={500} size="1.4rem">
+                  lk
+                </Text>
+              </Split>
+            </Link>
 
-            <Split splitChildren="Node" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                Node
-              </Text>
-            </Split>
+            <Link
+              href={SOCIAL_URL.GITHUB}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Split splitChildren="gh" fontSize="1.4rem" weight={500}>
+                <Text color="gray200" weight={500} size="1.4rem">
+                  gh
+                </Text>
+              </Split>
+            </Link>
+
+            <Link
+              href={SOCIAL_URL.TWITTER}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Split splitChildren="tw" fontSize="1.4rem" weight={500}>
+                <Text color="gray200" weight={500} size="1.4rem">
+                  tw
+                </Text>
+              </Split>
+            </Link>
           </Flex>
         </Flex>
+      </S.LeftColumn>
 
-        <Flex align="center" gap="2rem" className="display-none">
-          <Link
-            href={SOCIAL_URL.INSTAGRAM}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Split splitChildren="ig" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                ig
-              </Text>
-            </Split>
-          </Link>
+      <S.RightColumn>
+        <Box
+          splitChildren={<Text color="gray200">React</Text>}
+          area="react"
+          icon={
+            <Image
+              src="images/svg/icons/react_icon.svg"
+              alt="React logo"
+              width={24}
+              height={24}
+              priority
+            />
+          }
+        >
+          <Text color="gray200">React</Text>
+        </Box>
 
-          <Link
-            href={SOCIAL_URL.LINKEDIN}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Split splitChildren="lk" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                lk
-              </Text>
-            </Split>
-          </Link>
+        <Box
+          splitChildren={<Text color="gray200">Next</Text>}
+          area="next"
+          icon={
+            <Image
+              src="images/svg/icons/next_icon.svg"
+              alt="Next logo"
+              width={24}
+              height={24}
+              priority
+            />
+          }
+        >
+          <Text color="gray200">Next</Text>
+        </Box>
 
-          <Link
-            href={SOCIAL_URL.GITHUB}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Split splitChildren="gh" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                gh
-              </Text>
-            </Split>
-          </Link>
-
-          <Link
-            href={SOCIAL_URL.TWITTER}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Split splitChildren="tw" fontSize="1.4rem" weight={500}>
-              <Text color="gray200" weight={500} size="1.4rem">
-                tw
-              </Text>
-            </Split>
-          </Link>
-        </Flex>
-      </S.HeroFooter>
+        <Box
+          splitChildren={<Text color="gray200">Node</Text>}
+          area="node"
+          icon={
+            <Image
+              src="images/svg/icons/node_icon.svg"
+              alt="Node logo"
+              width={24}
+              height={24}
+              priority
+            />
+          }
+        >
+          <Text color="gray200">Node</Text>
+        </Box>
+      </S.RightColumn>
     </S.HeroContent>
   );
 };

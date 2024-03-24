@@ -7,7 +7,8 @@ export const SHAPES = [
     style: {
       top: '45%',
       left: '5%'
-    }
+    },
+    ref: 'shapeOneRef'
   },
   {
     src: 'images/svg/shape-1.svg',
@@ -17,7 +18,8 @@ export const SHAPES = [
     style: {
       top: '20%',
       right: '5%'
-    }
+    },
+    ref: 'shapeTwoRef'
   },
   {
     src: 'images/svg/shape-2.svg',
@@ -27,7 +29,8 @@ export const SHAPES = [
     style: {
       top: '15%',
       right: '5%'
-    }
+    },
+    ref: 'shapeThreeRef'
   },
   {
     src: 'images/svg/shape-3.svg',
@@ -37,6 +40,7 @@ export const SHAPES = [
     style: {
       top: '0',
       right: '0'
-    }
+    },
+    ref: 'shapeFourRef'
   }
 ];
